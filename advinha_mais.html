@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<input/>
+<button>Verificar!</button>
+<script>
+function sorteia(n){
+	return  Math.round(Math.random() * n);
+}
+var resposta = sorteia(10);
+var chute = document.querySelector("input");
+chute.focus();
+function verifica(){
+	if(chute.value == resposta){
+		alert("Parabéns, você acertou!");
+	}else{
+		alert("Que pena, você errou! A resposta era: " + resposta + ".");
+		resposta = sorteia(10);			
+	}
+	chute.value = "";
+	chute.focus();
+}	
+var botão = document.querySelector("button");
+botão.onclick = verifica;
+</script>
